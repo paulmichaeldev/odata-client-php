@@ -75,9 +75,10 @@ class ODataClient implements IODataClient
     public function __construct(
         $baseUrl,
         Callable $authenticationProvider = null,
-        IHttpProvider $httpProvider = null
+        IHttpProvider $httpProvider = null,
+        string $baseUrlSuffix = null
     ) {
-        $this->setBaseUrl($baseUrl);
+        $this->setBaseUrl($baseUrl, $baseUrlSuffix);
         $this->authenticationProvider = $authenticationProvider;
         $this->httpProvider = $httpProvider ?: new GuzzleHttpProvider();
 
