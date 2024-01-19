@@ -156,13 +156,13 @@ class ODataClient implements IODataClient
      *
      * @throws ODataException
      */
-    public function setBaseUrl($value)
+    public function setBaseUrl($value, string $urlSuffix = '/')
     {
         if (empty($value)) {
             throw new ODataException(Constants::BASE_URL_MISSING);
         }
 
-        $this->baseUrl = rtrim($value, '/') . '/';
+        $this->baseUrl = rtrim($value, '/') . $urlSuffix;
     }
 
     /**
