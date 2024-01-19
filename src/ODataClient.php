@@ -76,7 +76,7 @@ class ODataClient implements IODataClient
         $baseUrl,
         Callable $authenticationProvider = null,
         IHttpProvider $httpProvider = null,
-        ?string $baseUrlSuffix = null
+        string $baseUrlSuffix = ''
     ) {
         $this->setBaseUrl($baseUrl, $baseUrlSuffix);
         $this->authenticationProvider = $authenticationProvider;
